@@ -1,13 +1,14 @@
-public class GestorVideojuegos {
-    Videojuego[] lista = new Videojuego[];
+import java.util.ArrayList;
+import java.util.List;
 
+public class GestorVideojuegos {
+    List<Videojuego> lista;
 
     /**
      *
-     * @param lista
      */
-    public GestorVideojuegos(Videojuego[] lista) {
-        this.lista = lista;
+    public GestorVideojuegos() {
+        this.lista = new ArrayList<>();
     }
 
 
