@@ -6,12 +6,14 @@ import java.util.List;
 
 public class GestorVideojuegos {
     List<Videojuego> lista;
-
+    Connection conexion;
     /**
      *
      */
     public GestorVideojuegos() {
         this.lista = new ArrayList<>();
+        // Creamos la conexión real con la bbdd
+        this.conexion = ConexionDB.getConnection();
     }
 
 
@@ -25,7 +27,6 @@ public class GestorVideojuegos {
      * @return boolean
      */
     public boolean addGame(String titulo, String genero, String plataforma, int anio, int valoracion) throws SQLException {
-        Connection conexion = null;
         int filasAfectadas = 0;
         try(PreparedStatement pstmt = conexion.prepareStatement("INSERT INTO videojuegos(titulo, genero, plataforma, anio, valoracion) VALUES(?,?,?,?,?)")){
             pstmt.setString(1,titulo);
