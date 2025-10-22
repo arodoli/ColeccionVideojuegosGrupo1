@@ -1,3 +1,6 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +24,17 @@ public class GestorVideojuegos {
      * @param valoracion int (1-10)
      * @return boolean
      */
-    public boolean addGame(String titulo, String genero, String plataforma, int anio, int valoracion) {
+    public boolean addGame(String titulo, String genero, String plataforma, int anio, int valoracion) throws SQLException {
+        Connection conexion = null;
+        int filasAfectadas = 0;
+        try(PreparedStatement pstmt = conexion.prepareStatement("INSERT INTO videojuegos(titulo, genero, plataforma, anio, valoracion) VALUES(?,?,?,?,?)")){
+            pstmt.setString(1,titulo);
+            pstmt.setString(2,genero);
+            pstmt.setString(3,plataforma);
+            pstmt.setInt(4,anio);
+            pstmt.setInt(5,valoracion);
+            filasAfectadas = pstmt.executeUpdate();
+        }
         Videojuego juego = new Videojuego(titulo, genero, plataforma, anio, valoracion);
         if(!lista.contains(juego)){
             return lista.add(juego);
