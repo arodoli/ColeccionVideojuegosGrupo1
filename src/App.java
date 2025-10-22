@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        GestorVideojuegos videojuegos = new GestorVideojuegos();
         int opcion = 0;
         while (opcion != 6) {
             System.out.println("\n=== MENÚ COLECCIÓN DE VIDEOJUEGOS ===");
@@ -37,7 +37,11 @@ public class App {
                         System.out.print("Valoración (1-10): ");
                         int valoracion = sc.nextInt();
                         sc.nextLine();
-                        // insertar respectivo método
+                        if(videojuegos.addGame(titulo, genero, plataforma, anno, valoracion)){
+                            System.out.println("Juego añadido satisfactoriamente.");
+                        }else{
+                            System.out.println("Juego no añadido, su id ya existe en el sistema");
+                        }
                     }
                     case 2 -> {
                         System.out.println("ELIMINA UN JUEGO:\n");

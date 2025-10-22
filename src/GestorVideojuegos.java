@@ -22,7 +22,12 @@ public class GestorVideojuegos {
      * @return boolean
      */
     public boolean addGame(String titulo, String genero, String plataforma, int anio, int valoracion) {
-//        Implementacion
+        Videojuego juego = new Videojuego(titulo, genero, plataforma, anio, valoracion);
+        if(!lista.contains(juego)){
+            return lista.add(juego);
+        }else{
+            return false;
+        }
     }
 
     /**
