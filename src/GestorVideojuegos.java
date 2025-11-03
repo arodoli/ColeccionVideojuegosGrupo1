@@ -34,7 +34,7 @@ public class GestorVideojuegos {
             pstmt.setString(3,plataforma);
             pstmt.setInt(4,anio);
             pstmt.setInt(5,valoracion);
-            filasAfectadas = pstmt.executeUpdate();
+          //  filasAfectadas = pstmt.executeUpdate();
         }
         Videojuego juego = new Videojuego(titulo, genero, plataforma, anio, valoracion);
         if(!lista.contains(juego)){
