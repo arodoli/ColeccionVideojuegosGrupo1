@@ -1,9 +1,11 @@
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+       // GestorVideojuegos videojuegos = new GestorVideojuegos();
+       // Comentado el gestor por errores de conexion a BD
         int opcion = 0;
         while (opcion != 6) {
             System.out.println("\n=== MENÚ COLECCIÓN DE VIDEOJUEGOS ===");
@@ -37,27 +39,35 @@ public class App {
                         System.out.print("Valoración (1-10): ");
                         int valoracion = sc.nextInt();
                         sc.nextLine();
-                        // insertar respectivo método
+                        System.out.println("Juego añadido satisfactoriamente.");
+
                     }
                     case 2 -> {
                         System.out.println("ELIMINA UN JUEGO:\n");
-                        System.out.print("ID a eliminar: ");
-                        int id = sc.nextInt();
-                        sc.nextLine();
+                        System.out.print("Introduce el titulo del juego que quieres eliminar: ");
+                        String id = sc.nextLine();
+
                         // insertar respectivo método
                     }
                     case 3 -> {
                         System.out.println("BUSCA UN JUEGO:\n");
-                        System.out.println("Busca por título, plataforma o género:");
+                        System.out.println("Por que quieres buscar?: ");
+
+                        System.out.println("1) Titulo: ");
+                        System.out.println("2) Plataforma: ");
+                        System.out.println("3) Genero: ");
+                        String texto2 = sc.nextLine();
+
+                        System.out.println("Introduce tu busqueda:");
                         String texto = sc.nextLine();
                         // insertar respectivo método
                     }
                     case 4 -> {
-                        System.out.println("LISTA DE TODOS LOS JUEGOS:\n");
+                        System.out.println("LISTA DE TODOS LOS JUEGOS: Work in progress\n");
                         // insertar respectivo método
                     }
                     case 5 -> {
-                        System.out.println("LISTA DE LOS JUEGOS MEJOR VALORADOS:\n");
+                        System.out.println("LISTA DE LOS JUEGOS MEJOR VALORADOS: Work in progress\n");
                         // insertar respectivo método
                     }
                     case 6 -> {
