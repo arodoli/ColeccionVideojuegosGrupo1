@@ -70,7 +70,7 @@ SELECT 'Base de datos videojuegos_db y tabla videojuegos creadas correctamente.'
 ### 3. Configuración del Proyecto
 
 1.  Clona o descarga este repositorio.
-2.  **Importante:** Edita el archivo `ConexionDB.java` (no incluido en el prompt, pero inferido) con tus credenciales de la base de datos:
+2.  **Importante:** Edita el archivo `ConexionDB.java` con tus credenciales de la base de datos:
     ```java
     // Dentro de ConexionDB.java (ejemplo)
     private static final String URL = "jdbc:mysql://localhost:3306/gestor_videojuegos";
