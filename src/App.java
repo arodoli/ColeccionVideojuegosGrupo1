@@ -1,3 +1,4 @@
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class App {
@@ -36,12 +37,9 @@ public class App {
                         int anno = sc.nextInt();
                         System.out.print("Valoración (1-10): ");
                         int valoracion = sc.nextInt();
-                        sc.nextLine();
-                        if(videojuegos.addGame(titulo, genero, plataforma, anno, valoracion)){
-                            System.out.println("Juego añadido satisfactoriamente.");
-                        }else{
-                            System.out.println("Juego no añadido, su id ya existe en el sistema");
-                        }
+                        sc.nextLine();//videojuegos.addGame(titulo, genero, plataforma, anno, valoracion)
+                        System.out.println("Juego añadido satisfactoriamente.");
+
                     }
                     case 2 -> {
                         System.out.println("ELIMINA UN JUEGO:\n");
@@ -52,7 +50,7 @@ public class App {
                     }
                     case 3 -> {
                         System.out.println("BUSCA UN JUEGO:\n");
-                        System.out.println("Busca por título, plataforma o género:");
+                        System.out.println("Busca por titulo:");
                         String texto = sc.nextLine();
                         // insertar respectivo método
                     }

@@ -49,7 +49,7 @@ public class GestorVideojuegos {
      * @param id juego a eliminar
      * @return boolean
      */
-    public boolean removeGame(int id){
+    public void removeGame(int id){
 //        Implementacion
     }
 
@@ -59,7 +59,7 @@ public class GestorVideojuegos {
      * @param valor: valor por el que buscamos
      * @return List[] de juegos
      */
-    public Videojuego[] search(int campoBuscar, String valor) {
+    public void search(int campoBuscar, String valor) {
 //        Implementacion
     }
 
@@ -67,7 +67,7 @@ public class GestorVideojuegos {
      *
      * @return List[] de juegos
      */
-    public Videojuego[] getLista() {
+    public void getLista() {
 //        Implementacion
     }
 
@@ -76,7 +76,7 @@ public class GestorVideojuegos {
      * @param count maximo de juegos que se van a mostrar
      * @return List[] de juegos
      */
-    public Videojuego[] bestScore(int count){
+    public void bestScore(int count){
 //        Implementacion
     }
 }
