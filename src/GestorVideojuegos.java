@@ -1,14 +1,13 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
 public class GestorVideojuegos {
     List<Videojuego> lista;
     Connection conexion;
-
     /**
      *
      */
@@ -28,8 +27,22 @@ public class GestorVideojuegos {
      * @param valoracion int (1-10)
      * @return boolean
      */
-    public boolean addGame(String titulo, String genero, String plataforma, int anio, int valoracion) {
-//        Implementacion
+    public boolean addGame(String titulo, String genero, String plataforma, int anio, int valoracion) throws SQLException {
+        int filasAfectadas = 0;
+        try(PreparedStatement pstmt = conexion.prepareStatement("INSERT INTO videojuegos(titulo, genero, plataforma, anio, valoracion) VALUES(?,?,?,?,?)")){
+            pstmt.setString(1,titulo);
+            pstmt.setString(2,genero);
+            pstmt.setString(3,plataforma);
+            pstmt.setInt(4,anio);
+            pstmt.setInt(5,valoracion);
+          //  filasAfectadas = pstmt.executeUpdate();
+        }
+        Videojuego juego = new Videojuego(titulo, genero, plataforma, anio, valoracion);
+        if(!lista.contains(juego)){
+            return lista.add(juego);
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -37,7 +50,7 @@ public class GestorVideojuegos {
      * @param id juego a eliminar
      * @return boolean
      */
-    public boolean removeGame(int id){
+    public void removeGame(int id){
 //        Implementacion
     }
 
@@ -47,7 +60,7 @@ public class GestorVideojuegos {
      * @param valor: valor por el que buscamos
      * @return List[] de juegos
      */
-    public Videojuego[] search(int campoBuscar, String valor) {
+    public void search(int campoBuscar, String valor) {
 //        Implementacion
     }
 
@@ -55,7 +68,7 @@ public class GestorVideojuegos {
      *
      * @return List[] de juegos
      */
-    public Videojuego[] getLista() {
+    public void getLista() {
 //        Implementacion
     }
 

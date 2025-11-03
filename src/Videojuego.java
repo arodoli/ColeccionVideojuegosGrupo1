@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Videojuego {
     private int id;
     private String titulo;
@@ -58,5 +60,17 @@ public class Videojuego {
                 ", anio=" + anio +
                 ", valoracion=" + valoracion +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Videojuego that = (Videojuego) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
