@@ -5,6 +5,7 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
        // GestorVideojuegos videojuegos = new GestorVideojuegos();
+       // Comentado el gestor por errores de conexion a BD
         int opcion = 0;
         while (opcion != 6) {
             System.out.println("\n=== MENÚ COLECCIÓN DE VIDEOJUEGOS ===");
@@ -37,7 +38,7 @@ public class App {
                         int anno = sc.nextInt();
                         System.out.print("Valoración (1-10): ");
                         int valoracion = sc.nextInt();
-                        sc.nextLine();//videojuegos.addGame(titulo, genero, plataforma, anno, valoracion)
+                        sc.nextLine();
                         System.out.println("Juego añadido satisfactoriamente.");
 
                     }
